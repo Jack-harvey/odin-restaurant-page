@@ -1,0 +1,29 @@
+@import "modern-normalize.css";
+
+:root {
+  --white: #f2f4f3;
+  --black: #191919;
+  --purple: #7261a3;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  height: 4rem;
+}
+
+main {
+  margin: auto;
+}
+
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  height: 2rem;
+}
