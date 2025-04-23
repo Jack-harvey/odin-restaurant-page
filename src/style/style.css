@@ -20,6 +20,7 @@ header {
 
 main {
   margin: auto;
+  max-width: 900px;
 }
 
 footer {
@@ -39,7 +40,8 @@ footer {
   }
 
   img {
-    width: 65vw;
+    flex: 1;
+    max-width: 1px;
     border-radius: 25px;
     margin-bottom: 3rem;
   }
