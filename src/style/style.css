@@ -4,6 +4,7 @@
   --white: #f2f4f3;
   --black: #191919;
   --purple: #7261a3;
+  --mainWidth: 900px;
 }
 
 body {
@@ -20,7 +21,7 @@ header {
 
 main {
   margin: auto;
-  max-width: 900px;
+  max-width: var(--mainWidth);
 }
 
 footer {
@@ -39,11 +40,18 @@ footer {
     font-size: 5rem;
   }
 
-  img {
-    flex: 1;
-    max-width: 1px;
-    border-radius: 25px;
+  div.img {
+    display: flex;
+    max-width: var(--mainWidth);
+  }
+
+  div > img {
+    min-width: 0;
+    flex: 1 1 auto;
+    border-radius: 50px;
+    /* border: #191919 3px solid; */
     margin-bottom: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   p {

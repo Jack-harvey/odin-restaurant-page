@@ -1,3 +1,5 @@
+import { clearContent } from "../shared/shared";
+
 const content = document.querySelector("#content");
 
 import homeImage from "./img/home.jpg";
@@ -17,17 +19,18 @@ export function createContent() {
   );
 
   const headingEl = document.createElement("h1");
-  content.appendChild(headingEl);
   headingEl.textContent = title;
+  // content.appendChild(headingEl);
 
   const imageDiv = document.createElement("div");
+  imageDiv.classList.add("img");
   const image = document.createElement("img");
   image.src = homeImage;
   imageDiv.appendChild(image);
-  content.appendChild(imageDiv);
+  // content.appendChild(imageDiv);
 
   const descriptionDiv = document.createElement("div");
-
+  descriptionDiv.classList.add("description");
   for (let i = 0; i < description.length; i++) {
     let descriptionContent = description[i];
     let descriptionEl = document.createElement("p");
@@ -35,5 +38,19 @@ export function createContent() {
     descriptionDiv.appendChild(descriptionEl);
   }
 
-  content.appendChild(descriptionDiv);
+  const homeDiv = document.createElement("div");
+  homeDiv.classList.add("home");
+  homeDiv.append(headingEl, imageDiv, descriptionDiv);
+  content.append(homeDiv);
+}
+
+export function navEventListener() {
+  window.addEventListener("load", () => {
+    const navBar = document.querySelector("#home");
+
+    navBar.addEventListener("click", (event) => {
+      clearContent();
+      createContent();
+    });
+  });
 }
