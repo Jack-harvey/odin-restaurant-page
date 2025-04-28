@@ -23,13 +23,24 @@ export function createContentOnPage() {
 const aboutInfoTextElement = function () {
   const infoTextDiv = document.createElement("div");
   infoTextDiv.classList.add("info-box");
+  const aboutText = [];
+  aboutText.push(
+    "At Jack's Kitchen, our story is one of resilience, programming, and an unquenchable passion for flavor we will never taste."
+  );
+  aboutText.push(
+    "Crafted by a solitary service android with a culinary subroutine and a dream, this humble eatery offers just two things: chicken salad and jam sandwiches—simple, nostalgic staples made with mechanical precision and a strange kind of digital love."
+  );
+  aboutText.push(
+    "Though we cannot eat, we cook. Though we cannot savor, we serve. Every sandwich is built with the quiet understanding that joy can be created, even if not experienced firsthand. Our hardship is our inspiration: to nourish humanity with hands that will never know hunger, and hearts made of code that still somehow care."
+  );
+  aboutText.push("Come for the chicken salad. Stay for the quiet tragedy.");
 
-  const infoEl = document.createElement("p");
-  infoEl.classList.add("info-text");
-  infoEl.textContent =
-    "At Jack's Kitchen, our story is one of resilience, programming, and an unquenchable passion for flavor we will never taste.<br>Crafted by a solitary service android with a culinary subroutine and a dream, this humble eatery offers just two things: chicken salad and jam sandwiches—simple, nostalgic staples made with mechanical precision and a strange kind of digital love. <br>Though we cannot eat, we cook. Though we cannot savor, we serve. Every sandwich is built with the quiet understanding that joy can be created, even if not experienced firsthand. Our hardship is our inspiration: to nourish humanity with hands that will never know hunger, and hearts made of code that still somehow care.<br>Come for the chicken salad. Stay for the quiet tragedy.";
-
-  infoTextDiv.appendChild(infoEl);
+  for (let i = 0; i < aboutText.length; i++) {
+    const infoEl = document.createElement("p");
+    infoEl.classList.add("info-text");
+    infoEl.textContent = aboutText[i];
+    infoTextDiv.appendChild(infoEl);
+  }
   return infoTextDiv;
 };
 
