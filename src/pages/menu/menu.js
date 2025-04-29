@@ -5,16 +5,70 @@ export function navEventListener() {
     const navBar = document.querySelector("#menu");
 
     navBar.addEventListener("click", (event) => {
-      console.log(event);
+      clearContent();
+      createContentOnPage();
     });
   });
 }
 
 const content = document.querySelector("#content");
 
-function createContentOnPage() {}
+export function createContentOnPage() {
+  const cardDivs = createCards();
 
-function createCard() {}
+  cardDivs.forEach((cardDiv) => {
+    content.appendChild(cardDiv);
+  });
+}
+
+function createCards() {
+  const menuItems = createArrayOfMenuItems();
+  const cardDivs = [];
+
+  menuItems.forEach((menuItem) => {
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("item-card");
+    cardDiv.dataset.id = menuItem.id;
+
+    const cardName = document.createElement("span");
+    cardName.classList.add("card-name");
+    cardName.innerText = menuItem.name;
+
+    const cardDescription = document.createElement("div");
+    cardName.classList.add("card-desc");
+
+    const cardDescriptionText = document.createElement("p");
+    cardDescriptionText.innerText = menuItem.description;
+
+    cardDescription.appendChild(cardDescriptionText);
+
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("card-footer");
+
+    const dietaryInfo = document.createElement("div");
+    dietaryInfo.classList.add("Dietary-info");
+
+    const dietaryInfoText = document.createElement("span");
+    dietaryInfoText.innerText = menuItem.dietaryFlag;
+
+    dietaryInfo.appendChild(dietaryInfoText);
+
+    const costInfo = document.createElement("div");
+    costInfo.classList.add("cost-info");
+
+    const costInfoText = document.createElement("span");
+    costInfoText.innerText = menuItem.price;
+
+    costInfo.appendChild(costInfoText);
+
+    cardFooter.append(dietaryInfo, costInfo);
+
+    cardDiv.append(cardName, cardDescription, cardFooter);
+    cardDivs.push(cardDiv);
+  });
+
+  return cardDivs;
+}
 
 class menuItem {
   static toggleSoldOut() {
@@ -35,7 +89,7 @@ class menuItem {
 function createArrayOfMenuItems() {
   const ArrayOfMenuItems = [];
 
-  return ArrayOfMenuItems.push(
+  ArrayOfMenuItems.push(
     new menuItem(
       "Strawberry Jam Chicken Sandwich",
       8,
@@ -421,4 +475,6 @@ function createArrayOfMenuItems() {
       "LF"
     )
   );
+
+  return ArrayOfMenuItems;
 }
