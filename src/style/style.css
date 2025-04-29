@@ -60,11 +60,64 @@ footer {
     line-height: 1.4rem;
     margin: 0.25rem 0rem;
   }
+}
 
-  /* .description {
-    border: solid black 2px;
-    border-radius: 20px;
+.about {
+  color: var(--black);
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 31rem 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+  h1 {
+    font-size: 5rem;
+    grid-area: 1 / 1 / 1 / -1;
+  }
+
+  .image-container {
+    grid-area: 2 / 1 / 2 / -1;
+    margin-bottom: 4rem;
+
+    img {
+      max-width: 900px;
+      border-radius: 50px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+
+  .info-box {
+    grid-area: 3 / 1 / 3 / -1;
+
+    p {
+      max-width: 75ch;
+      margin: 0.5rem 0rem;
+      line-height: 1.2rem;
+    }
+  }
+
+  .contact-card {
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  } */
+    grid-area: 4 / 1 / 4 / 2;
+    border: black solid 3px;
+    border-radius: 25px;
+    width: 300px;
+
+    .contact-title {
+      font-size: 2rem;
+    }
+
+    .contact-phone {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      margin-top: 1.5rem;
+    }
+
+    .contact-msg {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      margin-top: 1rem;
+    }
+  }
 }

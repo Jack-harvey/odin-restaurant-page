@@ -1,4 +1,5 @@
 import { clearContent } from "../shared/shared";
+import aboutImg from "./img/androidPrep.jpg";
 
 export function navEventListener() {
   window.addEventListener("load", () => {
@@ -14,10 +15,20 @@ export function navEventListener() {
 const content = document.querySelector("#content");
 
 export function createContentOnPage() {
+  const aboutPageDiv = document.createElement("div");
+  aboutPageDiv.classList.add("about");
+
   const title = document.createElement("h1");
   title.textContent = "About";
 
-  content.append(title, aboutInfoTextElement(), contactCardElement());
+  const imgEl = document.createElement("img");
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("image-container");
+  imgEl.src = aboutImg;
+  imgContainer.append(imgEl);
+
+  aboutPageDiv.append(title, imgContainer, aboutInfoTextElement(), contactCardElement());
+  content.append(aboutPageDiv);
 }
 
 const aboutInfoTextElement = function () {
