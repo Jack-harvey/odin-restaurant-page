@@ -16,9 +16,13 @@ const content = document.querySelector("#content");
 export function createContentOnPage() {
   const cardDivs = createCards();
 
+  const cardArea = document.createElement("div");
+  cardArea.classList.add("card-area");
+
   cardDivs.forEach((cardDiv) => {
-    content.appendChild(cardDiv);
+    cardArea.appendChild(cardDiv);
   });
+  content.appendChild(cardArea);
 }
 
 function createCards() {
@@ -60,7 +64,7 @@ function createCards() {
     costInfo.classList.add("cost-info");
 
     const costInfoText = document.createElement("span");
-    costInfoText.innerText = menuItem.price;
+    costInfoText.innerText = "$" + menuItem.price;
 
     costInfo.appendChild(costInfoText);
 
