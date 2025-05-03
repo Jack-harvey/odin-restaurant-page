@@ -31,11 +31,14 @@ function createCards() {
     cardDiv.dataset.id = menuItem.id;
 
     const cardName = document.createElement("span");
-    cardName.classList.add("card-name");
     cardName.innerText = menuItem.name;
 
+    const itemName = document.createElement("div");
+    itemName.classList.add("item-name");
+    itemName.appendChild(cardName);
+
     const cardDescription = document.createElement("div");
-    cardName.classList.add("card-desc");
+    cardDescription.classList.add("item-desc");
 
     const cardDescriptionText = document.createElement("p");
     cardDescriptionText.innerText = menuItem.description;
@@ -43,10 +46,10 @@ function createCards() {
     cardDescription.appendChild(cardDescriptionText);
 
     const cardFooter = document.createElement("div");
-    cardFooter.classList.add("card-footer");
+    cardFooter.classList.add("item-info");
 
     const dietaryInfo = document.createElement("div");
-    dietaryInfo.classList.add("Dietary-info");
+    dietaryInfo.classList.add("dietary-info");
 
     const dietaryInfoText = document.createElement("span");
     dietaryInfoText.innerText = menuItem.dietaryFlag;
@@ -63,7 +66,7 @@ function createCards() {
 
     cardFooter.append(dietaryInfo, costInfo);
 
-    cardDiv.append(cardName, cardDescription, cardFooter);
+    cardDiv.append(itemName, cardDescription, cardFooter);
     cardDivs.push(cardDiv);
   });
 
