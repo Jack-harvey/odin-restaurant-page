@@ -1,4 +1,5 @@
-import { clearContent } from "../shared/shared";
+import { clearContent, normalLayout } from "../shared/shared";
+import menuImage from "./img/menu.jpg";
 
 export function navEventListener() {
   window.addEventListener("load", () => {
@@ -14,6 +15,9 @@ export function navEventListener() {
 const content = document.querySelector("#content");
 
 export function createContentOnPage() {
+  const layout = normalLayout("Menu", menuImage);
+  layout.classList.add("menu");
+
   const cardDivs = createCards();
 
   const cardArea = document.createElement("div");
@@ -22,7 +26,9 @@ export function createContentOnPage() {
   cardDivs.forEach((cardDiv) => {
     cardArea.appendChild(cardDiv);
   });
-  content.appendChild(cardArea);
+
+  layout.appendChild(cardArea);
+  content.appendChild(layout);
 }
 
 function createCards() {

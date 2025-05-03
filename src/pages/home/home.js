@@ -1,4 +1,4 @@
-import { clearContent } from "../shared/shared";
+import { clearContent, normalLayout } from "../shared/shared";
 
 const content = document.querySelector("#content");
 
@@ -18,19 +18,23 @@ export function createContent() {
     "Our intimate setting and bespoke service invite a discerning clientele to savor the elegance of minimalism—where every bite is a quiet revolution in taste."
   );
 
-  const headingEl = document.createElement("h1");
-  headingEl.textContent = title;
-  // content.appendChild(headingEl);
+  // const headingEl = document.createElement("h1");
+  // headingEl.textContent = title;
+  // // content.appendChild(headingEl);
 
-  const imageDiv = document.createElement("div");
-  imageDiv.classList.add("img");
-  const image = document.createElement("img");
-  image.src = homeImage;
-  imageDiv.appendChild(image);
-  // content.appendChild(imageDiv);
+  // const imageDiv = document.createElement("div");
+  // imageDiv.classList.add("img");
+  // const image = document.createElement("img");
+  // image.src = homeImage;
+  // imageDiv.appendChild(image);
+  // // content.appendChild(imageDiv);
+
+  const layout = normalLayout("Home", homeImage);
+  layout.classList.add("home");
 
   const descriptionDiv = document.createElement("div");
   descriptionDiv.classList.add("description");
+
   for (let i = 0; i < description.length; i++) {
     let descriptionContent = description[i];
     let descriptionEl = document.createElement("p");
@@ -38,10 +42,10 @@ export function createContent() {
     descriptionDiv.appendChild(descriptionEl);
   }
 
-  const homeDiv = document.createElement("div");
-  homeDiv.classList.add("home");
-  homeDiv.append(headingEl, imageDiv, descriptionDiv);
-  content.append(homeDiv);
+  // const homeDiv = document.createElement("div");
+  // homeDiv.classList.add("home");
+  layout.append(descriptionDiv);
+  content.append(layout);
 }
 
 export function navEventListener() {
