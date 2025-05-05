@@ -18,7 +18,8 @@ export function createContentOnPage() {
   const layout = normalLayout("About", aboutImg);
   layout.classList.add("about");
 
-  layout.append(aboutInfoTextElement(), contactCardElement());
+  // layout.append(aboutInfoTextElement(), contactCardElement());
+  layout.append(aboutInfoTextElement());
   content.append(layout);
 }
 
@@ -88,5 +89,3 @@ const contactCardElement = function () {
   contactCardDiv.append(titleEl, phoneDiv, messageDiv);
   return contactCardDiv;
 };
-//contact card. email, mobile, send a message (this is a modal with a web form)
-// map from google...?

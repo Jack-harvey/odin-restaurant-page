@@ -19,6 +19,11 @@ header {
   color: var(--white);
   height: 4rem;
   flex: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -32,6 +37,21 @@ footer {
   color: var(--white);
   height: 2rem;
   flex: none;
+  text-align: center;
+  padding-top: 0.3rem;
+}
+
+button {
+  padding: 0.5rem 3rem;
+  background-color: var(--white);
+  border-radius: 7px;
+  border: none;
+  margin: 0px 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--purple);
 }
 
 .page-template {
@@ -74,7 +94,6 @@ footer {
 .about {
   .info-box {
     grid-area: 3 / 1 / 3 / -1;
-
     p {
       max-width: 75ch;
       margin: 0.5rem 0rem;
@@ -87,7 +106,8 @@ footer {
     grid-area: 4 / 1 / 4 / 2;
     border: black solid 3px;
     border-radius: 25px;
-    width: 300px;
+    width: 450px;
+    justify-self: start;
 
     .contact-title {
       font-size: 2rem;

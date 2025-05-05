@@ -1,6 +1,5 @@
 import "./style/style.css";
 import { clearContent } from "./pages/shared/shared";
-import { createContent as createHomeContent } from "./pages/home/home";
 import { navEventListener as homeEventListener } from "./pages/home/home";
 import { navEventListener as menuEventListener } from "./pages/menu/menu";
 import { navEventListener as aboutEventListener } from "./pages/about/about";

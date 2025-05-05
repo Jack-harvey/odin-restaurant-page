@@ -18,17 +18,6 @@ export function createContent() {
     "Our intimate setting and bespoke service invite a discerning clientele to savor the elegance of minimalism—where every bite is a quiet revolution in taste."
   );
 
-  // const headingEl = document.createElement("h1");
-  // headingEl.textContent = title;
-  // // content.appendChild(headingEl);
-
-  // const imageDiv = document.createElement("div");
-  // imageDiv.classList.add("img");
-  // const image = document.createElement("img");
-  // image.src = homeImage;
-  // imageDiv.appendChild(image);
-  // // content.appendChild(imageDiv);
-
   const layout = normalLayout("Home", homeImage);
   layout.classList.add("home");
 
